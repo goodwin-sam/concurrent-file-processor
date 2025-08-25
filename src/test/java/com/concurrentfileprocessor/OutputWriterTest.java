@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.concurrentfileprocessor.ConcurrentFileProcessor.outputFilename;
-import com.concurrentfileprocessor.tasks.OutputWriter;
+import com.concurrentfileprocessor.processor.OutputWriter;
 
 /**
  * test class for OutputWriter.java file

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.concurrentfileprocessor.tasks.FileMetricsCollector;
+import com.concurrentfileprocessor.processor.FileMetricsCollector;
 
 /**
  * test class for FileMetricsCollector.java file

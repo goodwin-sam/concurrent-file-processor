@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.tasks;
+package com.concurrentfileprocessor.processor;
 
 import java.io.File;
 import java.io.FileNotFoundException;

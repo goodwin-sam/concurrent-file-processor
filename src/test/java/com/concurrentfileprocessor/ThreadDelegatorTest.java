@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.concurrentfileprocessor.ConcurrentFileProcessor.fileStats;
 import static com.concurrentfileprocessor.ConcurrentFileProcessor.inputFiles;
-import com.concurrentfileprocessor.threading.ThreadDelegator;
+import com.concurrentfileprocessor.processor.ThreadDelegator;
 
 /**
  * test class for ThreadDelegator.java file
