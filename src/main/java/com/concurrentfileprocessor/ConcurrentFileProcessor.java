@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.concurrentfileprocessor.runners.GuiRunner;
-import com.concurrentfileprocessor.runners.HeadlessRunner;
+import com.concurrentfileprocessor.runner.GuiRunner;
+import com.concurrentfileprocessor.runner.HeadlessRunner;
 
 /**
  * main entry point for the concurrent file processor application

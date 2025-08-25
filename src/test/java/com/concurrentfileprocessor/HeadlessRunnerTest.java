@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.concurrentfileprocessor.runners.HeadlessRunner;
+import com.concurrentfileprocessor.runner.HeadlessRunner;
 
 /**
  * test class for HeadlessRunner.java file

@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.gui.windows;
+package com.concurrentfileprocessor.gui.window;
 
 import javafx.stage.Stage;
 

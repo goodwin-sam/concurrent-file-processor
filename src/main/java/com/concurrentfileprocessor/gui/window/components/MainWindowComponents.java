@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.gui.windows.components;
+package com.concurrentfileprocessor.gui.window.components;
 
 import java.io.File;
 import java.util.List;
@@ -40,19 +40,6 @@ public class MainWindowComponents {
 
     /**
      * constructor for main window components
-     * @param windowPurposeLabel what the window is for
-     * @param descriptionLabel description text label
-     * @param inputLabel input file selection label
-     * @param outputLabel output configuration label
-     * @param outputFilenameLabel output filename display label
-     * @param outputDirectoryLabel output directory display label
-     * @param quitButton quit application button
-     * @param restartButton restart application button
-     * @param inputFileButton select input files button
-     * @param filenameButton set filename button
-     * @param outputDirectoryButton select output directory button
-     * @param runButton process files button
-     * @param filenameField text field for output filename
      */
     public MainWindowComponents(Label windowPurposeLabel, Label descriptionLabel, Label inputLabel, Label outputLabel, Label outputFilenameLabel, Label outputDirectoryLabel, Button quitButton, Button restartButton, Button inputFileButton, Button outputDirectoryButton, Button runButton, Button filenameButton, TextField filenameField) {
         this.windowPurposeLabel = windowPurposeLabel;
@@ -80,15 +67,14 @@ public class MainWindowComponents {
         windowPurposeLabel.setFont(Font.font("System", 24));
         windowPurposeLabel.setStyle("-fx-text-fill: #1e40af; -fx-font-weight: bold;");
 
-        // create description label with instructions to select input files and configure output settings
-        Label descriptionLabel = new Label("Select your input files (.txt files only) and configure output settings like changing output directory or editing filename, "+
-                                           "then click the Process Files button to begin concurrent analysis");
+        // create description label
+        Label descriptionLabel = new Label("Select your input files (.txt files only) and configure output settings, then click the Process Files button to begin concurrent analysis");
         descriptionLabel.setFont(Font.font("System", 18));
         descriptionLabel.setAlignment(Pos.CENTER);
         descriptionLabel.setStyle("-fx-text-fill: #6b7280; -fx-text-alignment: center;");
         descriptionLabel.setWrapText(true);
 
-        // create input label showing instructions, or selected files if any are present
+        // create input label
         Label inputLabel = new Label("Click button below to select input files");
         if (inputFiles != null && !inputFiles.isEmpty()) {
             inputLabel.setText(buildFilenamesList(inputFiles));
@@ -96,39 +82,29 @@ public class MainWindowComponents {
         inputLabel.setWrapText(true);
         inputLabel.setFont(Font.font("System", FontWeight.BOLD, 16));
 
-        // create output configuration label with instructions how to choose directory and filename
-        Label outputLabel = new Label("""
-                                      Modify or keep the filename and then choose output directory
-                                      (default filename: processed_file_stats.txt)
-                                      (default directory: Downloads)
-                                      """);
+        // create output configuration label
+        Label outputLabel = new Label("Modify filename and choose output directory (default: Downloads)");
         outputLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
-        
         outputLabel.setWrapText(true);
         outputLabel.setAlignment(Pos.CENTER);
         outputLabel.setStyle(outputLabel.getStyle() + "; -fx-text-alignment: center;");
         outputLabel.setPadding(new javafx.geometry.Insets(0, 0, 15, 0));
 
-        // create output filename display label to show the current output filename
+        // create output filename display label
         Label outputFilenameLabel = new Label("Output Filename: " + outputFilename);
         outputFilenameLabel.setFont(Font.font("System", 16));
         outputFilenameLabel.setStyle("-fx-text-fill: #374151;");
 
-        // create output directory display label to show the current output directory
+        // create output directory display label
         Label outputDirectoryLabel = new Label("Output directory: " + outputFilePath);
         outputDirectoryLabel.setFont(Font.font("System", 16));
         outputDirectoryLabel.setStyle("-fx-text-fill: #374151;");
 
-        
-        return new MainWindowComponents(windowPurposeLabel, descriptionLabel, inputLabel, outputLabel, outputFilenameLabel, outputDirectoryLabel, null, 
-                        null, null, null, null, null, null);
+        return new MainWindowComponents(windowPurposeLabel, descriptionLabel, inputLabel, outputLabel, outputFilenameLabel, outputDirectoryLabel, null, null, null, null, null, null, null);
     }
 
     /**
      * creates all field components for the main window
-     * configures the filename input field with the current output filename
-     * @param components existing components object to update
-     * @return updated components with filename field configured
      */
     public static MainWindowComponents createMainWindowFields(MainWindowComponents components){
         TextField filenameField = new TextField();
@@ -145,21 +121,16 @@ public class MainWindowComponents {
         Platform.runLater(() -> filenameField.requestFocus());
         
         components.filenameField = filenameField;
-
         return components;
     }
 
     /**
      * creates all button components for the main window
-     * sets up navigation, file selection, and processing buttons with appropriate styling and actions
-     * @param components existing components object to update
-     * @param primaryStage stage for file and directory dialogs
-     * @return updated components with all buttons configured
      */
     public static MainWindowComponents createMainWindowButtons(MainWindowComponents components, Stage primaryStage){
         Button quitButton = ButtonCreator.createQuitButton();
 
-        // create button to select the input files with a file chooser
+        // create input file button
         Button inputFileButton = ButtonCreator.createButton("Select Input Files", (event) -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Select Input Files");
@@ -180,12 +151,11 @@ public class MainWindowComponents {
             "-fx-background-radius: 8;"
         );
 
-        // create button to set the output filename
+        // create filename button
         Button filenameButton = ButtonCreator.createButton("Set Filename", (event) -> {
             outputFilename = components.filenameField.getText();
             components.outputFilenameLabel.setText("Output filename: " + outputFilename);
         });
-
         filenameButton.setFont(Font.font("System", 14));
         filenameButton.setPrefSize(120, 45);
         filenameButton.setStyle(
@@ -194,7 +164,7 @@ public class MainWindowComponents {
             "-fx-background-radius: 8;"
         );
         
-        // create button to select the output directory with a directory chooser
+        // create output directory button
         Button outputDirectoryButton = ButtonCreator.createButton("Select Output Directory", (event) -> {
             DirectoryChooser directoryChooser = new DirectoryChooser();
             directoryChooser.setTitle("Select Output Directory");
@@ -214,9 +184,8 @@ public class MainWindowComponents {
             "-fx-background-radius: 8;"
         );
 
-        // create main processing button
-        Button runButton = ButtonCreator.createButton("Process Files", (event) -> {
-        });
+        // create run button
+        Button runButton = ButtonCreator.createButton("Process Files", (event) -> {});
         runButton.setFont(Font.font("System", 22));
         runButton.setPrefSize(250, 55);
         runButton.setMinSize(250, 55);
@@ -242,9 +211,6 @@ public class MainWindowComponents {
     
     /**
      * builds a formatted list of filenames for display
-     * creates bullet-point list of selected input files
-     * @param files list of files to format
-     * @return formatted string with bullet points and filenames
      */
     private static String buildFilenamesList(List<File> files) {
         StringBuilder builder = new StringBuilder();

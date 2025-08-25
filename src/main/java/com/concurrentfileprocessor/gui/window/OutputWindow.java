@@ -1,8 +1,8 @@
-package com.concurrentfileprocessor.gui.windows;
+package com.concurrentfileprocessor.gui.window;
 
 import static com.concurrentfileprocessor.ConcurrentFileProcessor.fileStats;
-import com.concurrentfileprocessor.gui.windows.components.EventCreator;
-import com.concurrentfileprocessor.gui.windows.components.OutputWindowComponents;
+import com.concurrentfileprocessor.gui.window.components.EventCreator;
+import com.concurrentfileprocessor.gui.window.components.OutputWindowComponents;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -77,5 +77,4 @@ public class OutputWindow {
         label.setFont(new Font("Arial", 36));
         return label;
     }
-} 
-
+}

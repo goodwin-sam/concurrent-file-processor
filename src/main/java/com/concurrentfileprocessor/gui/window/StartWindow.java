@@ -1,6 +1,6 @@
-package com.concurrentfileprocessor.gui.windows;
+package com.concurrentfileprocessor.gui.window;
 
-import com.concurrentfileprocessor.gui.windows.components.StartWindowComponents;
+import com.concurrentfileprocessor.gui.window.components.StartWindowComponents;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

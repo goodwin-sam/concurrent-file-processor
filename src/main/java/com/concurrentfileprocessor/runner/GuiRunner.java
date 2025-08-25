@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.runners;
+package com.concurrentfileprocessor.runner;
 
 import com.concurrentfileprocessor.gui.JavaFxApp;
 

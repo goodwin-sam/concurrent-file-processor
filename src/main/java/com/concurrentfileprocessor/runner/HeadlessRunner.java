@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.runners;
+package com.concurrentfileprocessor.runner;
 
 import java.io.File;
 import java.util.ArrayList;

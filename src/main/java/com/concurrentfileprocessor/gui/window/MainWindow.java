@@ -1,7 +1,7 @@
-package com.concurrentfileprocessor.gui.windows;
+package com.concurrentfileprocessor.gui.window;
 
-import com.concurrentfileprocessor.gui.windows.components.EventCreator;
-import com.concurrentfileprocessor.gui.windows.components.MainWindowComponents;
+import com.concurrentfileprocessor.gui.window.components.EventCreator;
+import com.concurrentfileprocessor.gui.window.components.MainWindowComponents;
 import com.concurrentfileprocessor.processor.FileProcessor;
 
 import javafx.application.Platform;
@@ -41,7 +41,7 @@ public class MainWindow {
         components = MainWindowComponents.createMainWindowFields(components);
         components = MainWindowComponents.createMainWindowButtons(components, stage);
         
-        // set run button actionto process files and show output window
+        // set run button action to process files and show output window
         components.runButton.setOnAction(event -> {
             FileProcessor.processFiles();
             controller.showOutputWindow(stage);
@@ -78,8 +78,6 @@ public class MainWindow {
 
     /**
      * creates left pane with input file selection controls
-     * @param components UI components for the window
-     * @return left pane
      */
     public static VBox createLeftPane(MainWindowComponents components) {
         VBox leftPane = new VBox(10, components.inputLabel, components.inputFileButton);
@@ -90,12 +88,9 @@ public class MainWindow {
 
     /**
      * creates right pane with output configuration controls
-     * @param components UI components for the window
-     * @param primaryStage stage for window
-     * @return right pane
      */
     public static VBox createRightPane(MainWindowComponents components, Stage primaryStage) {
-        // create container for filename field and button, to select output file name
+        // create container for filename field and button
         HBox filenameContainer = new HBox(5);
         filenameContainer.setAlignment(Pos.CENTER);
         filenameContainer.getChildren().addAll(components.filenameField, components.filenameButton);
@@ -113,8 +108,6 @@ public class MainWindow {
 
     /**
      * creates bottom pane with navigation buttons
-     * @param components UI components for the window
-     * @return bottom pane
      */
     public VBox createBottomPane(MainWindowComponents components) {
         // create bottom pane with navigation and action buttons
@@ -125,9 +118,6 @@ public class MainWindow {
 
     /**
      * creates center pane combining left and right panes
-     * @param leftPane left pane
-     * @param rightPane right pane
-     * @return center pane
      */
     public static HBox createCenterPane(VBox leftPane, VBox rightPane) {
         HBox centerPane = new HBox(leftPane, rightPane);
@@ -146,10 +136,6 @@ public class MainWindow {
 
     /**
      * creates root layout combining all sections
-     * @param topSection top section with title and description
-     * @param centerPane center section with left and right panes   
-     * @param bottomPane bottom section with navigation buttons
-     * @return root layout
      */
     public static BorderPane createRoot(VBox topSection, HBox centerPane, VBox bottomPane) {
         // create root layout using BorderPane for organized sections
@@ -162,4 +148,3 @@ public class MainWindow {
         return root;
     }
 }
-

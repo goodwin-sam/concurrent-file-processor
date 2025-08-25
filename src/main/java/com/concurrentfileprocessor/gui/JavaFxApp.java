@@ -1,6 +1,6 @@
 package com.concurrentfileprocessor.gui;
 
-import com.concurrentfileprocessor.gui.windows.Controller;
+import com.concurrentfileprocessor.gui.window.Controller;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
