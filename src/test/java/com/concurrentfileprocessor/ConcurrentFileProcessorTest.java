@@ -1,5 +1,7 @@
 package com.concurrentfileprocessor;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +26,6 @@ class ConcurrentFileProcessorTest {
         assertTrue(result.contains(home));
         
         // verify path is the downloads directory or home directory as fallback
-        assertTrue(result.equals(home + "/Downloads") || result.equals(home));
+        assertTrue(result.equals(home + File.separator + "Downloads") || result.equals(home));
     }
 }
