@@ -14,7 +14,28 @@ Java application that processes multiple text files concurrently to analyze word
   - Total line count across all files
   - File count tracking
 - **Flexible Output**: Customizable output filename and directory
-- **Cross-Platform**: Works on Windows, macOS, and Linux
+- **Cross-Platform**: Works on Windows and Linux
+
+## 📥 Downloads
+
+### Linux AppImage
+Download the latest Linux AppImage from [GitHub Releases](https://github.com/yourusername/concurrent-file-processor/releases):
+
+- **Concurrent_File_Processor-0.1.0-x86_64.AppImage** - Self-contained Linux executable
+- **Includes Java runtime** - Works on any Linux distribution without Java installation
+
+#### Running the AppImage
+```bash
+# Download and run directly
+./Concurrent_File_Processor-0.1.0-x86_64.AppImage
+```
+
+### Windows Executable
+- **Coming Soon** - Windows .exe installer will be available in future releases
+- **No Java installation required** - Self-contained Windows application
+
+### macOS
+- **Coming Soon** - macOS .dmg package will be available in future releases
 
 ## 🏗️ Architecture
 
