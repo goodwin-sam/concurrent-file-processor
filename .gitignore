@@ -32,11 +32,15 @@ demo_input_files/*
 # Output files
 processed_file_stats.txt
 
-# Maven target directory (generated build output)
+# packaging
 target/
+dist/
+cfp-logo.png
+jre-17-linux-x64.tar.gz
 
-# appimage directory
+# appimage
 AppDir/
+appimagetool.AppImage
 
 # personal development scripts
 lint-and-test
