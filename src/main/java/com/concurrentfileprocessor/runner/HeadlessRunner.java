@@ -1,4 +1,4 @@
-package com.concurrentfileprocessor.runners;
+package com.concurrentfileprocessor.runner;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,7 +12,15 @@ import static com.concurrentfileprocessor.ConcurrentFileProcessor.outputFilePath
 import static com.concurrentfileprocessor.ConcurrentFileProcessor.outputFilename;
 import com.concurrentfileprocessor.processor.FileProcessor;
 
+/**
+ * launcher class for headless mode
+ * processes files from command line without GUI interface
+ */
 public class HeadlessRunner {
+    /**
+     * runs the file processor in headless mode
+     * scans current directory for text files and processes them
+     */
     public static void run() {
         System.out.println("Running in headless mode");
 
@@ -31,6 +39,9 @@ public class HeadlessRunner {
         }
     }
 
+    /**
+     * processes files and displays results to console
+     */
     private static void processAndDisplayResults() {
         FileProcessor.processFiles();
         System.out.println("Total file count: " + fileStats.numberOfFiles);
@@ -39,6 +50,11 @@ public class HeadlessRunner {
         System.out.println("Total word count: " + fileStats.wordCount.size());
     }
 
+    /**
+     * scans directory for text files and returns list of found files
+     * @param directory directory to scan for .txt files
+     * @return list of text files found in directory
+     */
     private static List<File> getInputFiles(File directory){
         ArrayList<File> filesArray = new ArrayList<>();
         File[] files = directory.listFiles((dir, name) -> name.toLowerCase().endsWith(".txt"));
@@ -49,6 +65,10 @@ public class HeadlessRunner {
         return filesArray;
     }
     
+    /**
+     * prompts user for output filename or uses default
+     * @return filename for output file
+     */
     private static String getOutputFilename() {
         String fileName;
         try (Scanner scanner = new Scanner(System.in)) {
