@@ -36,9 +36,6 @@ Java application that processes multiple text files concurrently to analyze word
 3. **Run**:
    - Double-click the `.AppImage` file
    - Or run from terminal: `./concurrent-file-processor-vX.X.X-x86_64.AppImage` or `./concurrent-file-processor-vX.X.X-x86_64.AppImage --headless`
-4. **Process your data**:
-   - **If in GUI**: Select your text files and output directory, then click "Process Files" to begin processing
-   - **If in headless**: The application will automatically process all text files in the current directory, and prompt user for output file name
 
 ### 🪟 Windows
 
@@ -46,13 +43,14 @@ Java application that processes multiple text files concurrently to analyze word
 2. **Extract** the zip file to a location of your choice
 3. **Run**:
    - Double-click the `.exe` file in the extracted folder
-   - Or run from PowerShell/command prompt: navigate to the extracted folder, and run: `./
-   concurrent-file-processor-vX.X.X-amd64.exe` or 
-   `./concurrent-file-processor-vX.X.X-amd64.exe 
-   --headless`
-4. **Process your data**:
-   - **If in GUI**: Select your text files and output directory, then click "Process Files" to begin processing
-   - **If in headless**: The application will automatically process all text files in the current directory, and prompt user for output file name
+   - Or run from PowerShell/command prompt: navigate to the extracted folder, and run: `./concurrent-file-processor-vX.X.X-amd64.exe` or `./concurrent-file-processor-vX.X.X-amd64.exe --headless`
+
+### 📊 Process Your Data
+
+Once the application is running (on either platform):
+
+- **If in GUI**: Select your text files and output directory, then click "Process Files" to begin processing
+- **If in headless**: The application will automatically process all text files in the current directory, and prompt user for output file name.  Then the results appear in the console and the output file appears in the working directory.
 
 
 ### Developers
@@ -76,18 +74,18 @@ mvn javafx:run -Djavafx.args="--headless"
 ### Linux AppImage
 Download the latest Linux AppImage from [Releases](https://github.com/goodwin-sam/concurrent-file-processor/releases):
 
-- **concurrent-file-processor-vX.X.X-x86_64.AppImage** - Self-contained Linux executable
+- **concurrent-file-processor-vX.X.X-x86_64.AppImage** - Portable standalone executable
 - **Includes Java runtime** - Works on any Linux distribution without Java installation
+- **Can be run from anywhere** - The AppImage is a single file that can be placed and executed from any location
 
 #### Running the AppImage
+Double click the appimage file or Run from Terminal
 
 ```bash
-# Double click the appimage file
-
-# or Run directly with GUI
+# Run directly with GUI (can be run from any directory)
 ./concurrent-file-processor-vX.X.X-x86_64.AppImage
 
-# or Run directly headless
+# or Run directly headless (can be run from any directory)
 ./concurrent-file-processor-vX.X.X-x86_64.AppImage --headless
 ```
 
@@ -95,8 +93,9 @@ Download the latest Linux AppImage from [Releases](https://github.com/goodwin-sa
 
 Download the latest Windows zip file from [Releases](https://github.com/goodwin-sam/concurrent-file-processor/releases):
 
-- **concurrent-file-processor-vX.X.X-amd64.zip** - Self-contained Windows package
+- **concurrent-file-processor-vX.X.X-amd64.zip** - Portable folder package
 - **Includes Java runtime** - Works on Windows without Java installation
+- **Portable folder structure** - The extracted folder contains all necessary files and can be moved to any location, but the executable must be run from within the extracted folder
 
 #### Contents of the zip file:
 - `jre/` folder - Java runtime environment
@@ -106,10 +105,11 @@ Download the latest Windows zip file from [Releases](https://github.com/goodwin-
 #### Running on Windows
 
 1. **Extract** the zip file to any location
-2. **GUI Mode**: Double-click `concurrent-file-processor-vX.X.X-amd64.exe`
-3. **Headless Mode**: Open Command Prompt or PowerShell in the extracted folder and run:
+2. **Navigate to the extracted folder** - The executable must be run from within this folder
+3. **GUI Mode**: Double-click `concurrent-file-processor-vX.X.X-amd64.exe` from within the extracted folder
+4. **Headless Mode**: Open Command Prompt or PowerShell in the extracted folder and run:
    ```
-   concurrent-file-processor-vX.X.X-amd64.exe --headless
+   .\concurrent-file-processor-vX.X.X-amd64.exe --headless
    ```
 
 ## 🎯 Usage
