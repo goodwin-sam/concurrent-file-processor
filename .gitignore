@@ -35,7 +35,6 @@ processed_file_stats.txt
 # packaging
 target/
 dist/
-cfp-logo.png
 jre-17-linux-x64.tar.gz
 
 # appimage
