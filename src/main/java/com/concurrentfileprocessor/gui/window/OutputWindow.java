@@ -60,9 +60,15 @@ public class OutputWindow {
         root.setCenter(fileStatsBox);
         root.setBottom(navigationBox);
 
-        Scene scene = new Scene(root, 1280, 720);
+        Scene scene = new Scene(root, 960, 540);
         stage.setTitle("Output Results Window");
         stage.setScene(scene);
+        
+        // set window properties
+        stage.setMinWidth(960);
+        stage.setMinHeight(540);
+        stage.setResizable(true);
+        
         stage.centerOnScreen();
         stage.show();
     }
