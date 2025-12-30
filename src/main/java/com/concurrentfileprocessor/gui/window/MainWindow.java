@@ -62,13 +62,13 @@ public class MainWindow {
         // assemble final layout
         BorderPane root = createRoot(topPane, centerPane, bottomPane);
         root.setStyle("-fx-background-color: #f8fafc; -fx-padding: 20px;");
-        Scene scene = new Scene(root, 1280, 720);
+        Scene scene = new Scene(root, 960, 540);
         stage.setTitle("Concurrent File Processor");
         stage.setScene(scene);
         
         // set window properties and display
-        stage.setMinWidth(1280);
-        stage.setMinHeight(720);
+        stage.setMinWidth(960);
+        stage.setMinHeight(540);
         stage.setResizable(true);
         
         stage.centerOnScreen();

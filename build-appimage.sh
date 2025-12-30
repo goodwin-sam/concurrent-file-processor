@@ -187,7 +187,7 @@ else
 fi
 
 # create AppImage
-APPIMAGE_NAME="Concurrent_File_Processor-${VERSION}-${ARCH}.AppImage"
+APPIMAGE_NAME="concurrent-file-processor-${VERSION}-${ARCH}.AppImage"
 echo "Creating AppImage: $APPIMAGE_NAME"
 if [ -f "appimagetool.AppImage" ]; then
     ./appimagetool.AppImage "$APP_DIR" "$APPIMAGE_NAME"
